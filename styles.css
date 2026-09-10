@@ -10,9 +10,9 @@
   --success: #6fa98a;
   --error: #d97b6c;
 }
-
+ 
 * { box-sizing: border-box; }
-
+ 
 html, body {
   margin: 0;
   background: var(--bg);
@@ -20,25 +20,49 @@ html, body {
   font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100%;
 }
-
+ 
 body {
+  position: relative;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 32px 20px 72px;
+  padding: 32px 20px 48px;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% 0%, #1c262c 0%, var(--bg) 62%);
 }
-
-.wrap { width: 100%; max-width: 560px; }
-
+ 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('icon-512.png');
+  background-repeat: no-repeat;
+  background-position: center 46%;
+  background-size: 620px;
+  opacity: 0.07;
+  filter: grayscale(25%) brightness(0.9);
+  z-index: -1;
+  pointer-events: none;
+}
+ 
+.wrap { width: 100%; max-width: 480px; }
+ 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 28px; height: 28px; border-radius: 7px; display: block; }
-.brand-name { font-size: 14px; font-weight: 600; letter-spacing: 0.01em; color: var(--text-muted); }
-
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+ 
 .install-btn {
   background: transparent;
   color: var(--accent);
@@ -50,32 +74,17 @@ body {
   cursor: pointer;
 }
 .install-btn:hover { border-color: var(--accent); }
-
-h1 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin: 0 0 10px;
-}
-p.lead {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 0 0 36px;
-  max-width: 440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+ 
 .panel {
-  background: var(--surface);
+  background: rgba(25, 34, 38, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
 }
-
+ 
 .dropzone {
   border: 1.5px dashed var(--border);
   border-radius: 10px;
@@ -92,7 +101,7 @@ p.lead {
 .dropzone .hint { font-size: 15px; color: var(--text); margin-bottom: 6px; }
 .dropzone .hint2 { font-size: 13px; color: var(--text-muted); }
 input[type=file] { display: none; }
-
+ 
 .field { margin-top: 18px; }
 .field label {
   display: block;
@@ -111,9 +120,9 @@ input[type=file] { display: none; }
   outline: none;
 }
 .field input:focus { border-color: var(--accent); }
-
+ 
 .error-text { color: var(--error); font-size: 13px; margin-top: 8px; }
-
+ 
 button.primary {
   width: 100%;
   margin-top: 18px;
@@ -127,7 +136,7 @@ button.primary {
   cursor: pointer;
 }
 button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
-
+ 
 button.ghost {
   width: 100%;
   margin-top: 10px;
@@ -139,7 +148,7 @@ button.ghost {
   font-size: 14px;
   cursor: pointer;
 }
-
+ 
 .progress-wrap { margin-top: 20px; }
 .progress-label {
   display: flex;
@@ -160,36 +169,25 @@ button.ghost {
   width: 0%;
   transition: width 0.2s ease;
 }
-
+ 
 .done-icon { display: flex; justify-content: center; margin-bottom: 14px; }
 .done-icon svg { width: 40px; height: 40px; }
 .done-title { text-align: center; font-size: 17px; font-weight: 600; margin-bottom: 4px; }
 .done-sub { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
-
+ 
 .ios-hint {
   text-align: center;
   font-size: 13px;
   color: var(--text-muted);
   margin-top: 18px;
 }
-
-.note {
-  margin-top: 24px;
-  padding: 14px 16px;
-  background: var(--surface-2);
-  border-radius: 8px;
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-.note strong { color: var(--text); }
-
+ 
 .footer {
   text-align: center;
   font-size: 12px;
   color: var(--text-muted);
-  margin-top: 40px;
-  opacity: 0.7;
+  margin-top: 32px;
+  opacity: 0.6;
 }
-
+ 
 .hidden { display: none !important; }
