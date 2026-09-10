@@ -1,0 +1,16 @@
+{
+  "name": "Déverrouiller un PDF — Dametoti",
+  "short_name": "Déverrouiller PDF",
+  "description": "Retire la protection d'un fichier PDF directement dans le navigateur.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#12181c",
+  "theme_color": "#12181c",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
