@@ -6,29 +6,23 @@
 <title>Déverrouiller un PDF</title>
 <meta name="description" content="Retire la protection d'un fichier PDF directement dans le navigateur, sans envoyer le fichier sur un serveur.">
 <meta name="theme-color" content="#12181c">
-
+ 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+ 
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
-
+ 
   <div class="topbar">
-    <div class="brand">
-      <img src="icon-192.png" alt="" class="brand-mark">
-      <span class="brand-name">Dametoti</span>
-    </div>
+    <img src="icon-192.png" alt="" class="brand-mark">
     <button id="installBtn" class="install-btn hidden">Installer l'application</button>
   </div>
-
-  <h1>Déverrouiller un PDF</h1>
-  <p class="lead">Retire la protection d'un fichier PDF directement dans ton navigateur. Rien n'est envoyé sur un serveur : tout le traitement se fait sur cet appareil.</p>
-
+ 
   <div class="panel">
-
+ 
     <!-- ÉTAPE : sélection du fichier -->
     <div id="step-drop">
       <div class="dropzone" id="dropzone">
@@ -38,7 +32,7 @@
       </div>
       <input type="file" id="fileInput" accept="application/pdf">
     </div>
-
+ 
     <!-- ÉTAPE : mot de passe requis -->
     <div id="step-password" class="hidden">
       <div class="field">
@@ -49,7 +43,7 @@
       <button class="primary" id="unlockBtn">Déverrouiller</button>
       <button class="ghost" id="cancelBtn">Choisir un autre fichier</button>
     </div>
-
+ 
     <!-- ÉTAPE : traitement -->
     <div id="step-processing" class="hidden">
       <div class="progress-wrap">
@@ -60,7 +54,7 @@
         <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
       </div>
     </div>
-
+ 
     <!-- ÉTAPE : terminé -->
     <div id="step-done" class="hidden">
       <div class="done-icon">
@@ -74,25 +68,21 @@
       <button class="primary" id="downloadBtn">Télécharger le PDF déverrouillé</button>
       <button class="ghost" id="restartBtn">Déverrouiller un autre fichier</button>
     </div>
-
+ 
     <!-- ÉTAPE : erreur générale -->
     <div id="step-error" class="hidden">
       <div class="error-text" id="generalError" style="margin-top:0;"></div>
       <button class="ghost" id="errorRestartBtn">Réessayer</button>
     </div>
-
+ 
   </div>
-
-  <p class="ios-hint hidden" id="iosHint">Pour l'installer sur iPhone/iPad : bouton Partager <span aria-hidden="true">⇧</span> puis « Sur l'écran d'accueil ».</p>
-
-  <div class="note">
-    <strong>Comment ça marche :</strong> chaque page du PDF est reconstruite dans un nouveau fichier sans chiffrement ni restriction. Le texte n'est donc plus sélectionnable ou recherchable après l'opération — le rendu visuel, lui, reste identique. Utilise cet outil uniquement sur des fichiers que tu as le droit de déverrouiller.
-  </div>
-
+ 
+  <p class="ios-hint hidden" id="iosHint">⇧ puis « Sur l'écran d'accueil »</p>
+ 
   <footer class="footer">© 2026 Dametoti</footer>
-
+ 
 </div>
-
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="app.js"></script>
